@@ -1,12 +1,177 @@
----
-layout: default
-title: CSS
-slug: css
-lead: "Fundamental HTML elements styled and enhanced with extensible classes."
----
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+
+    CSS &middot; Bootstrap
+
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
 
 
-  <!-- Global Bootstrap settings
+<!-- Documentation extras -->
+<link href="/assets/css/docs.css" rel="stylesheet">
+<link href="/assets/css/pygments-manni.css" rel="stylesheet">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+  <script src="/assets/js/respond/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+                <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+                               <link rel="shortcut icon" href="/assets/ico/favicon.png">
+
+
+
+    <!-- Place anything custom after this. -->
+  </head>
+  <body data-spy="scroll" data-target=".bs-sidebar">
+
+    <!-- Docs master nav -->
+    <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+  <div class="container">
+    <a href="/" class="navbar-brand">Bootstrap</a>
+    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="nav-collapse collapse bs-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/getting-started">Getting started</a>
+        </li>
+        <li class="active">
+          <a href="/css">CSS</a>
+        </li>
+        <li>
+          <a href="/components">Components</a>
+        </li>
+        <li>
+          <a href="/javascript">JavaScript</a>
+        </li>
+        <li>
+          <a href="/customize">Customize</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header">
+      <div class="container">
+        <h1>CSS</h1>
+        <p>Fundamental HTML elements styled and enhanced with extensible classes.</p>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="bs-sidebar">
+            <ul class="nav bs-sidenav">
+
+                 <li>
+  <a href="#overview">Overview</a>
+  <ul class="nav">
+    <li><a href="#overview-doctype">HTML5 doctype</a></li>
+    <li><a href="#overview-mobile">Mobile first</a></li>
+    <li><a href="#overview-responsive-images">Responsive images</a></li>
+    <li><a href="#overview-type-links">Type and links</a></li>
+    <li><a href="#overview-normalize">Normalize</a></li>
+    <li><a href="#overview-container">Container</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#glyphicons">Glyphicons</a>
+</li>
+<li>
+  <a href="#grid">Grid system</a>
+  <ul class="nav">
+    <li><a href="#grid-options">Available options</a></li>
+    <li><a href="#grid-example-basic">Ex: Stacked-to-horizonal</a></li>
+    <li><a href="#grid-example-mixed">Ex: Mobile-desktop</a></li>
+    <li><a href="#grid-example-mixed-complete">Ex: Mobile, tablet, desktop</a></li>
+    <li><a href="#grid-offsetting">Offset columns</a></li>
+    <li><a href="#grid-nesting">Nested columns</a></li>
+    <li><a href="#grid-column-ordering">Column ordering</a></li>
+    <li><a href="#grid-small">Small device grid</a></li>
+    <li><a href="#grid-less">LESS mixins and variables</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#type">Typography</a>
+  <ul class="nav">
+    <li><a href="#type-headings">Headings</a></li>
+    <li><a href="#type-body-copy">Body copy</a></li>
+    <li><a href="#type-emphasis">Emphasis</a></li>
+    <li><a href="#type-abbreviations">Abbreviations</a></li>
+    <li><a href="#type-addresses">Addresses</a></li>
+    <li><a href="#type-blockquotes">Blockquotes</a></li>
+    <li><a href="#type-lists">Lists</a></li>
+  </ul>
+</li>
+<li><a href="#code">Code</a></li>
+<li>
+  <a href="#tables">Tables</a>
+  <ul class="nav">
+    <li><a href="#tables-example">Basic example</a></li>
+    <li><a href="#tables-striped">Zebra striping</a></li>
+    <li><a href="#tables-bordered">Bordered tables</a></li>
+    <li><a href="#tables-hover-rows">Hover rows</a></li>
+    <li><a href="#tables-condensed">Condensed tables</a></li>
+    <li><a href="#tables-row-classes">Contextual row classes</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#forms">Forms</a>
+  <ul class="nav">
+    <li><a href="#forms-example">Basic example</a></li>
+    <li><a href="#forms-inline">Inline variation</a></li>
+    <li><a href="#forms-horizontal">Horizontal variation</a></li>
+    <li><a href="#forms-controls">Supported controls</a></li>
+    <li><a href="#forms-control-states">Control states</a></li>
+    <li><a href="#forms-input-groups">Input groups</a></li>
+    <li><a href="#forms-control-sizes">Control sizing</a></li>
+    <li><a href="#forms-help-text">Help text</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#buttons">Buttons</a>
+  <ul class="nav">
+    <li><a href="#buttons-options">Button options</a></li>
+    <li><a href="#buttons-sizes">Sizes</a></li>
+    <li><a href="#buttons-disabled">Disabled</a></li>
+    <li><a href="#buttons-tags">Button tags</a></li>
+  </ul>
+</li>
+<li><a href="#images">Images</a></li>
+<li><a href="#helper-classes">Helper classes</a></li>
+<li><a href="#responsive-utilities">Responsive utilities</a></li>
+
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+            <!-- Global Bootstrap settings
   ================================================== -->
   <div class="bs-docs-section" id="overview">
     <div class="page-header">
@@ -16,19 +181,17 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
 
     <h3 id="overview-doctype">HTML5 doctype required</h3>
     <p>Bootstrap makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype. Include it at the beginning of all your projects.</p>
-{% highlight html %}
-<!DOCTYPE html>
-<html lang="en">
+<div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
   ...
-</html>
-{% endhighlight %}
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
 
     <h3 id="overview-mobile">Mobile first</h3>
     <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
     <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
-{% highlight html %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <h3 id="overview-responsive-images">Responsive images</h3>
     <p>We automatically attempt to scale images to appropriate sizes with a global <code>max-width: 100%;</code> on all <code>&lt;img&gt;</code> elements. If you run into problems (e.g., with Google Maps), be sure to disable this property on a per-case basis.</p>
@@ -48,11 +211,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
 
     <h3 id="overview-container">Centering with container</h3>
     <p>Easily center a page's contents by wrapping its contents in a container. Containers set <code>max-width</code> at various media query breakpoints to match our grid system.</p>
-{% highlight html %}
-<div class="container">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
   ...
-</div>
-{% endhighlight %}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
   </div>
 
 
@@ -163,35 +325,34 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <div class="col-lg-6">6</div>
       </div>
     </div>
-{% highlight html %}
-<div class="row">
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-  <div class="col-lg-1">1</div>
-</div>
-<div class="row show-grid">
-  <div class="col-lg-8">8</div>
-  <div class="col-lg-4">4</div>
-</div>
-<div class="row">
-  <div class="col-lg-4">4</div>
-  <div class="col-lg-4">4</div>
-  <div class="col-lg-4">4</div>
-</div>
-<div class="row">
-  <div class="col-lg-6">6</div>
-  <div class="col-lg-6">6</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-1&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row show-grid&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-8&quot;</span><span class="nt">&gt;</span>8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="grid-example-mixed">Example: Combining mobile with desktop</h3>
     <p>Don't want your columns to simply stack in smaller devices? Use the small device grid system by adding <code>.col-*</code> classes to the existing <code>.col-lg-*</code> ones. See the example below for a better idea of how it all works.</p>
@@ -210,21 +371,20 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <div class="col-6 col-lg-6">6</div>
       </div>
     </div>
-{% highlight html %}
-<div class="row">
-  <div class="col-12 col-lg-8">8</div>
-  <div class="col-6 col-lg-4">4</div>
-</div>
-<div class="row">
-  <div class="col-6 col-lg-4">4</div>
-  <div class="col-6 col-lg-4">4</div>
-  <div class="col-6 col-lg-4">4</div>
-</div>
-<div class="row">
-  <div class="col-6 col-lg-6">6</div>
-  <div class="col-6 col-lg-6">6</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-12 col-lg-8&quot;</span><span class="nt">&gt;</span>8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-4&quot;</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-6&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-lg-6&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="grid-example-mixed-complete">Example: Mobile, tablet, and desktop</h3>
     <p>Build on the previous example by creating even more dynamic and powerful layouts with tablet <code>.col-sm-*</code> classes.</p>
@@ -243,21 +403,20 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
       </div>
     </div>
-{% highlight html %}
-<div class="row">
-  <div class="col-12 col-sm-8 col-lg-8">.col-12 .col-lg-8</div>
-  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-</div>
-<div class="row">
-  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-</div>
-<div class="row">
-  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
-  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-12 col-sm-8 col-lg-8&quot;</span><span class="nt">&gt;</span>.col-12 .col-lg-8<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-4 col-lg-4&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-4 col-lg-4&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-4 col-lg-4&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-4<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-4 col-lg-4&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-6 col-lg-6&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-6<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-6 col-sm-6 col-lg-6&quot;</span><span class="nt">&gt;</span>.col-6 .col-lg-6<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <div class="bs-callout">
       <h4>Need more examples?</h4>
@@ -280,19 +439,18 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <div class="col-lg-6 col-offset-3">6 offset 3</div>
       </div><!-- /row -->
     </div>
-{% highlight html %}
-<div class="row">
-  <div class="col-lg-4">...</div>
-  <div class="col-lg-4 col-offset-4">...</div>
-</div>
-<div class="row">
-  <div class="col-lg-3 col-offset-3">3 offset 3</div>
-  <div class="col-lg-3 col-offset-3">3 offset 3</div>
-</div>
-<div class="row">
-  <div class="col-lg-6 col-offset-3">...</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4 col-offset-4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 col-offset-3&quot;</span><span class="nt">&gt;</span>3 offset 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 col-offset-3&quot;</span><span class="nt">&gt;</span>3 offset 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6 col-offset-3&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
 
     <h3 id="grid-nesting">Nesting columns</h3>
@@ -310,21 +468,20 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         </div>
       </div>
     </div>
-{% highlight html %}
-<div class="row">
-  <div class="col-lg-9">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-9&quot;</span><span class="nt">&gt;</span>
     Level 1: 9 columns
-    <div class="row">
-      <div class="col-lg-6">
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>
         Level 2: 6 columns
-      </div>
-      <div class="col-lg-6">
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-6&quot;</span><span class="nt">&gt;</span>
         Level 2: 6 columns
-      </div>
-    </div>
-  </div>
-</div>
-{% endhighlight %}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="grid-column-ordering">Column ordering</h3>
     <p>Easily change the order of our built-in grid columns with <code>.col-push-*</code> and <code>.col-pull-*</code> modifier classes.</p>
@@ -333,78 +490,73 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
       <div class="col-lg-3 col-pull-9">3</div>
     </div>
 
-{% highlight html %}
-<div class="row show-grid">
-  <div class="col-lg-9 col-push-3">9</div>
-  <div class="col-lg-3 col-pull-9">3</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row show-grid&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-9 col-push-3&quot;</span><span class="nt">&gt;</span>9<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-3 col-pull-9&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="grid-less">LESS mixins and variables</h3>
     <p>In addition to <a href="#grid-example">prebuilt grid classes</a> for fast layouts, Bootstrap includes LESS variables and mixins for quickly generating your own simple, semantic layouts.</p>
 
     <h4>Variables</h4>
     <p>Variables determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
-{% highlight css %}
-@grid-columns:              12;
-@grid-gutter-width:         30px;
-@grid-float-breakpoint:     768px;
-{% endhighlight %}
+<div class="highlight"><pre><code class="css"><span class="k">@grid-columns</span><span class="o">:</span>              <span class="nt">12</span><span class="p">;</span>
+<span class="k">@grid-gutter-width</span><span class="o">:</span>         <span class="nt">30px</span><span class="p">;</span>
+<span class="k">@grid-float-breakpoint</span><span class="o">:</span>     <span class="nt">768px</span><span class="p">;</span>
+</code></pre></div>
 
     <h4>Mixins</h4>
     <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
-{% highlight css %}
-// Creates a wrapper for a series of columns
-.make-row() {
-  // Negative margin the row out to align the content of columns
-  margin-left:  (@grid-gutter-width / -2);
-  margin-right: (@grid-gutter-width / -2);
-  // Then clear the floated columns
-  .clearfix();
-}
+<div class="highlight"><pre><code class="css"><span class="o">//</span> <span class="nt">Creates</span> <span class="nt">a</span> <span class="nt">wrapper</span> <span class="nt">for</span> <span class="nt">a</span> <span class="nt">series</span> <span class="nt">of</span> <span class="nt">columns</span>
+<span class="nc">.make-row</span><span class="o">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">Negative</span> <span class="k">margin</span> <span class="n">the</span> <span class="n">row</span> <span class="n">out</span> <span class="n">to</span> <span class="n">align</span> <span class="n">the</span> <span class="k">content</span> <span class="n">of</span> <span class="n">columns</span>
+  <span class="k">margin-left</span><span class="o">:</span>  <span class="p">(</span><span class="o">@</span><span class="n">grid</span><span class="o">-</span><span class="n">gutter</span><span class="o">-</span><span class="k">width</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+  <span class="k">margin-right</span><span class="o">:</span> <span class="p">(</span><span class="o">@</span><span class="n">grid</span><span class="o">-</span><span class="n">gutter</span><span class="o">-</span><span class="k">width</span> <span class="o">/</span> <span class="m">-2</span><span class="p">);</span>
+  <span class="o">//</span> <span class="n">Then</span> <span class="k">clear</span> <span class="n">the</span> <span class="n">floated</span> <span class="n">columns</span>
+  <span class="o">.</span><span class="n">clearfix</span><span class="p">();</span>
+<span class="p">}</span>
 
-// Generate the columns
-.make-column(@columns) {
-  @media (min-width: @grid-float-breakpoint) {
-    float: left;
-    // Calculate width based on number of columns available
-    width: percentage(@columns / @grid-columns);
-  }
-  // Prevent columns from collapsing when empty
-  min-height: 1px;
-  // Set inner padding as gutters instead of margin
-  padding-left:  (@grid-gutter-width / 2);
-  padding-right: (@grid-gutter-width / 2);
-}
+<span class="o">//</span> <span class="nt">Generate</span> <span class="nt">the</span> <span class="nt">columns</span>
+<span class="nc">.make-column</span><span class="o">(</span><span class="k">@columns</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@grid-float-breakpoint</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nt">float</span><span class="o">:</span> <span class="nt">left</span><span class="o">;</span>
+    <span class="o">//</span> <span class="nt">Calculate</span> <span class="nt">width</span> <span class="nt">based</span> <span class="nt">on</span> <span class="nt">number</span> <span class="nt">of</span> <span class="nt">columns</span> <span class="nt">available</span>
+    <span class="nt">width</span><span class="o">:</span> <span class="nt">percentage</span><span class="o">(</span><span class="k">@columns</span> <span class="o">/</span> <span class="k">@grid-columns</span><span class="o">)</span><span class="p">;</span>
+  <span class="err">}</span>
+  <span class="o">//</span> <span class="nt">Prevent</span> <span class="nt">columns</span> <span class="nt">from</span> <span class="nt">collapsing</span> <span class="nt">when</span> <span class="nt">empty</span>
+  <span class="nt">min-height</span><span class="o">:</span> <span class="nt">1px</span><span class="p">;</span>
+  <span class="o">//</span> <span class="nt">Set</span> <span class="nt">inner</span> <span class="nt">padding</span> <span class="nt">as</span> <span class="nt">gutters</span> <span class="nt">instead</span> <span class="nt">of</span> <span class="nt">margin</span>
+  <span class="nt">padding-left</span><span class="o">:</span>  <span class="o">(</span><span class="k">@grid-gutter-width</span> <span class="o">/</span> <span class="nt">2</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">padding-right</span><span class="o">:</span> <span class="o">(</span><span class="k">@grid-gutter-width</span> <span class="o">/</span> <span class="nt">2</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
 
-// Generate the column offsets
-.make-column-offset(@columns) {
-  @media (min-width: @grid-float-breakpoint) {
-    margin-left: percentage((@columns / @grid-columns));
-  }
-}
-{% endhighlight %}
+<span class="o">//</span> <span class="nt">Generate</span> <span class="nt">the</span> <span class="nt">column</span> <span class="nt">offsets</span>
+<span class="nc">.make-column-offset</span><span class="o">(</span><span class="k">@columns</span><span class="o">)</span> <span class="p">{</span>
+  <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="k">@grid-float-breakpoint</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nt">margin-left</span><span class="o">:</span> <span class="nt">percentage</span><span class="o">((</span><span class="k">@columns</span> <span class="o">/</span> <span class="k">@grid-columns</span><span class="o">))</span><span class="p">;</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
 
     <h4>Example usage</h4>
     <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
-{% highlight css %}
-.wrapper {
-  .make-row();
-}
-.content-main {
-  .make-column(8);
-}
-.content-secondary {
-  .make-column(3);
-  .make-column-offset(1);
-}
-{% endhighlight %}
-{% highlight html %}
-<div class="wrapper">
-  <div class="content-main">...</div>
-  <div class="content-secondary">...</div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="css"><span class="nc">.wrapper</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">make</span><span class="o">-</span><span class="n">row</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nc">.content-main</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">make</span><span class="o">-</span><span class="n">column</span><span class="p">(</span><span class="m">8</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.content-secondary</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">make</span><span class="o">-</span><span class="n">column</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+  <span class="o">.</span><span class="n">make</span><span class="o">-</span><span class="n">column</span><span class="o">-</span><span class="n">offset</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content-main&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content-secondary&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
   </div>
 
@@ -452,14 +604,13 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         </tbody>
       </table>
     </div>
-{% highlight html %}
-<h1>...</h1>
-<h2>...</h2>
-<h3>...</h3>
-<h4>...</h4>
-<h5>...</h5>
-<h6>...</h6>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1&gt;</span>...<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>...<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>...<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>...<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>...<span class="nt">&lt;/h6&gt;</span>
+</code></pre></div>
 
     <!-- Body copy -->
     <h2 id="type-body-copy">Body copy</h2>
@@ -469,9 +620,8 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
       <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
       <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
     </div>
-{% highlight html %}
-<p>...</p>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
 
     <!-- Body copy .lead -->
     <h3>Lead body copy</h3>
@@ -479,9 +629,8 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
     <div class="bs-example">
       <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
     </div>
-{% highlight html %}
-<p class="lead">...</p>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;lead&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
 
     <!-- Using LESS -->
     <h3>Built with Less</h3>
@@ -497,9 +646,8 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
     <div class="bs-example">
       <p><small>This line of text is meant to be treated as fine print.</small></p>
     </div>
-{% highlight html %}
-<small>This line of text is meant to be treated as fine print.</small>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;small&gt;</span>This line of text is meant to be treated as fine print.<span class="nt">&lt;/small&gt;</span>
+</code></pre></div>
 
 
     <h3>Bold</h3>
@@ -507,18 +655,16 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
     <div class="bs-example">
       <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
     </div>
-{% highlight html %}
-<strong>rendered as bold text</strong>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;strong&gt;</span>rendered as bold text<span class="nt">&lt;/strong&gt;</span>
+</code></pre></div>
 
     <h3>Italics</h3>
     <p>For emphasizing a snippet of text with italics.</p>
     <div class="bs-example">
       <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
     </div>
-{% highlight html %}
-<em>rendered as italicized text</em>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;em&gt;</span>rendered as italicized text<span class="nt">&lt;/em&gt;</span>
+</code></pre></div>
 
     <p>Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
 
@@ -529,11 +675,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
       <p class="text-center">Center aligned text.</p>
       <p class="text-right">Right aligned text.</p>
     </div>
-{% highlight html %}
-<p class="text-left">Left aligned text.</p>
-<p class="text-center">Center aligned text.</p>
-<p class="text-right">Right aligned text.</p>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-left&quot;</span><span class="nt">&gt;</span>Left aligned text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-center&quot;</span><span class="nt">&gt;</span>Center aligned text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-right&quot;</span><span class="nt">&gt;</span>Right aligned text.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
 
     <h3>Emphasis classes</h3>
     <p>Convey meaning through color with a handful of emphasis utility classes.</p>
@@ -543,12 +688,11 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
       <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
       <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
     </div>
-{% highlight html %}
-<p class="text-muted">...</p>
-<p class="text-warning">...</p>
-<p class="text-danger">...</p>
-<p class="text-success">...</p>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-muted&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-warning&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-danger&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;text-success&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
 
 
     <!-- Abbreviations -->
@@ -560,18 +704,16 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
     <div class="bs-example">
       <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
     </div>
-{% highlight html %}
-<abbr title="attribute">attr</abbr>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">&quot;attribute&quot;</span><span class="nt">&gt;</span>attr<span class="nt">&lt;/abbr&gt;</span>
+</code></pre></div>
 
     <h3>Initialism</h3>
     <p>Add <code>.initialism</code> to an abbreviation for a slightly smaller font-size.</p>
     <div class="bs-example">
       <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.</p>
     </div>
-{% highlight html %}
-<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">&quot;HyperText Markup Language&quot;</span> <span class="na">class=</span><span class="s">&quot;initialism&quot;</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/abbr&gt;</span>
+</code></pre></div>
 
 
     <!-- Addresses -->
@@ -589,19 +731,18 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <a href="mailto:#">first.last@example.com</a>
       </address>
     </div>
-{% highlight html %}
-<address>
-  <strong>Twitter, Inc.</strong><br>
-  795 Folsom Ave, Suite 600<br>
-  San Francisco, CA 94107<br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;address&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Twitter, Inc.<span class="nt">&lt;/strong&gt;&lt;br&gt;</span>
+  795 Folsom Ave, Suite 600<span class="nt">&lt;br&gt;</span>
+  San Francisco, CA 94107<span class="nt">&lt;br&gt;</span>
+  <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">&quot;Phone&quot;</span><span class="nt">&gt;</span>P:<span class="nt">&lt;/abbr&gt;</span> (123) 456-7890
+<span class="nt">&lt;/address&gt;</span>
 
-<address>
-  <strong>Full Name</strong><br>
-  <a href="mailto:#">first.last@example.com</a>
-</address>
-{% endhighlight %}
+<span class="nt">&lt;address&gt;</span>
+  <span class="nt">&lt;strong&gt;</span>Full Name<span class="nt">&lt;/strong&gt;&lt;br&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;mailto:#&quot;</span><span class="nt">&gt;</span>first.last@example.com<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/address&gt;</span>
+</code></pre></div>
 
 
     <!-- Blockquotes -->
@@ -615,11 +756,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       </blockquote>
     </div>
-{% highlight html %}
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-</blockquote>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;blockquote&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/blockquote&gt;</span>
+</code></pre></div>
 
     <h3>Blockquote options</h3>
     <p>Style and content changes for simple variations on a standard blockquote.</p>
@@ -632,12 +772,11 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
       </blockquote>
     </div>
-{% highlight html %}
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-</blockquote>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;blockquote&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;small&gt;</span>Someone famous in <span class="nt">&lt;cite</span> <span class="na">title=</span><span class="s">&quot;Source Title&quot;</span><span class="nt">&gt;</span>Source Title<span class="nt">&lt;/cite&gt;&lt;/small&gt;</span>
+<span class="nt">&lt;/blockquote&gt;</span>
+</code></pre></div>
 
     <h4>Alternate displays</h4>
     <p>Use <code>.pull-right</code> for a floated, right-aligned blockquote.</p>
@@ -647,11 +786,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
       </blockquote>
     </div>
-{% highlight html %}
-<blockquote class="pull-right">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;blockquote</span> <span class="na">class=</span><span class="s">&quot;pull-right&quot;</span><span class="nt">&gt;</span>
   ...
-</blockquote>
-{% endhighlight %}
+<span class="nt">&lt;/blockquote&gt;</span>
+</code></pre></div>
 
 
     <!-- Lists -->
@@ -678,11 +816,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <li>Eget porttitor lorem</li>
       </ul>
     </div>
-{% highlight html %}
-<ul>
-  <li>...</li>
-</ul>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
 
     <h3>Ordered</h3>
     <p>A list of items in which the order <em>does</em> explicitly matter.</p>
@@ -698,11 +835,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <li>Eget porttitor lorem</li>
       </ol>
     </div>
-{% highlight html %}
-<ol>
-  <li>...</li>
-</ol>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</code></pre></div>
 
     <h3>Unstyled</h3>
     <p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
@@ -725,11 +861,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <li>Eget porttitor lorem</li>
       </ul>
     </div>
-{% highlight html %}
-<ul class="list-unstyled">
-  <li>...</li>
-</ul>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list-unstyled&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
 
     <h3>Inline</h3>
     <p>Place all list items on a single line with <code>inline-block</code> and some light padding.</p>
@@ -740,11 +875,10 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <li>Nulla volutpat</li>
       </ul>
     </div>
-{% highlight html %}
-<ul class="list-inline">
-  <li>...</li>
-</ul>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;list-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
 
     <h3>Description</h3>
     <p>A list of terms with their associated descriptions.</p>
@@ -759,12 +893,11 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
       </dl>
     </div>
-{% highlight html %}
-<dl>
-  <dt>...</dt>
-  <dd>...</dd>
-</dl>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+</code></pre></div>
 
     <h4>Horizontal description</h4>
     <p>Make terms and descriptions in <code>&lt;dl&gt;</code> line up side-by-side.</p>
@@ -781,12 +914,11 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
         <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
       </dl>
     </div>
-{% highlight html %}
-<dl class="dl-horizontal">
-  <dt>...</dt>
-  <dd>...</dd>
-</dl>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;dl-horizontal&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+</code></pre></div>
 
     <h5>Auto-truncating</h5>
     <p>
@@ -807,18 +939,16 @@ lead: "Fundamental HTML elements styled and enhanced with extensible classes."
 <div class="bs-example">
   For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 </div>
-{% highlight html %}
-For example, <code>&lt;section&gt;</code> should be wrapped as inline.
-{% endhighlight %}
+<div class="highlight"><pre><code class="html">For example, <span class="nt">&lt;code&gt;</span><span class="ni">&amp;lt;</span>section<span class="ni">&amp;gt;</span><span class="nt">&lt;/code&gt;</span> should be wrapped as inline.
+</code></pre></div>
 
     <h2>Basic block</h2>
     <p>Use <code>&lt;pre&gt;</code> for multiple lines of code. Be sure to escape any angle brackets in the code for proper rendering.</p>
 <div class="bs-example">
   <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
 </div>
-{% highlight html %}
-<pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;pre&gt;</span><span class="ni">&amp;lt;</span>p<span class="ni">&amp;gt;</span>Sample text here...<span class="ni">&amp;lt;</span>/p<span class="ni">&amp;gt;</span><span class="nt">&lt;/pre&gt;</span>
+</code></pre></div>
 
     <p>You may optionally add the <code>.pre-scrollable</code> class which will set a max-height of 350px and provide a y-axis scrollbar.</p>
   </div>
@@ -866,11 +996,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
-<table class="table">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table&quot;</span><span class="nt">&gt;</span>
   ...
-</table>
-{% endhighlight %}
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
 
     <h2>Optional classes</h2>
@@ -914,11 +1043,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
-<table class="table table-striped">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-striped&quot;</span><span class="nt">&gt;</span>
   ...
-</table>
-{% endhighlight %}
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
     <h3 id="tables-bordered">Bordered</h3>
     <p>Add <code>.table-bordered</code> for borders and rounded corners.</p>
@@ -958,11 +1086,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
-<table class="table table-bordered">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-bordered&quot;</span><span class="nt">&gt;</span>
   ...
-</table>
-{% endhighlight %}
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
     <h3 id="tables-hover-rows">Hover rows</h3>
     <p>Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
@@ -997,11 +1124,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
-<table class="table table-hover">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-hover&quot;</span><span class="nt">&gt;</span>
   ...
-</table>
-{% endhighlight %}
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
 
     <h3 id="tables-condensed">Condensed</h3>
@@ -1037,11 +1163,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
-<table class="table table-condensed">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;table table-condensed&quot;</span><span class="nt">&gt;</span>
   ...
-</table>
-{% endhighlight %}
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div>
 
 
 
@@ -1117,16 +1242,15 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </tbody>
       </table>
     </div><!-- /example -->
-{% highlight html %}
+<div class="highlight"><pre><code class="html">...
+<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;success&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>TB - Monthly<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>01/04/2012<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td&gt;</span>Approved<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
 ...
-<tr class="success">
-  <td>1</td>
-  <td>TB - Monthly</td>
-  <td>01/04/2012</td>
-  <td>Approved</td>
-</tr>
-...
-{% endhighlight %}
+</code></pre></div>
 
   </div>
 
@@ -1155,22 +1279,21 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <button type="submit" class="btn btn-default">Submit</button>
       </fieldset>
     </form><!-- /example -->
-{% highlight html %}
-<form>
-  <fieldset>
-    <legend>Legend</legend>
-    <label for="exampleInput">Label name</label>
-    <input type="text" id="exampleInput" placeholder="Type something…">
-    <p class="help-block">Example block-level help text here.</p>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Check me out
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </fieldset>
-</form>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Legend<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;exampleInput&quot;</span><span class="nt">&gt;</span>Label name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;exampleInput&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Type something…&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>Example block-level help text here.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Check me out
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
 
 
     <h2>Optional layouts</h2>
@@ -1192,18 +1315,17 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       </div>
       <button type="submit" class="btn btn-default">Sign in</button>
     </form><!-- /example -->
-{% highlight html %}
-<form class="form-inline">
-  <input type="text" placeholder="Email">
-  <input type="password" placeholder="Password">
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Remember me
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-horizontal">Horizontal form</h3>
     <p>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout.</p>
@@ -1229,30 +1351,29 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </div>
       </div>
     </form>
-{% highlight html %}
-<form class="form-horizontal">
-  <div class="row">
-    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="text" id="inputEmail" placeholder="Email">
-    </div>
-  </div>
-  <div class="row">
-    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-    <div class="col-lg-10">
-      <input type="password" id="inputPassword" placeholder="Password">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-    </div>
-    <div class="col-lg-10 col-offset-2">
-      <button type="submit" class="btn btn-default">Sign in</button>
-    </div>
-  </div>
-</form>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-horizontal&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputEmail&quot;</span> <span class="na">class=</span><span class="s">&quot;col-lg-2 control-label&quot;</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-10&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;inputEmail&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Email&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">class=</span><span class="s">&quot;col-lg-2 control-label&quot;</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-10&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">id=</span><span class="s">&quot;inputPassword&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Password&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Remember me
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-10 col-offset-2&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
 
 
     <h2 id="forms-controls">Supported form controls</h2>
@@ -1267,18 +1388,16 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <form class="bs-example">
       <input type="text" placeholder="Text input">
     </form>
-{% highlight html %}
-<input type="text" placeholder="Text input">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Text input&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <h3>Textarea</h3>
     <p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
     <form class="bs-example">
       <textarea rows="3"></textarea>
     </form>
-{% highlight html %}
-<textarea rows="3"></textarea>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;textarea</span> <span class="na">rows=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+</code></pre></div>
 
     <h3>Checkboxes and radios</h3>
     <p>Checkboxes are for selecting one or several options in a list while radios are for selecting one option from many.</p>
@@ -1304,21 +1423,20 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </label>
       </div>
     </form>
-{% highlight html %}
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it&#39;s great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;optionsRadios&quot;</span> <span class="na">id=</span><span class="s">&quot;optionsRadios1&quot;</span> <span class="na">value=</span><span class="s">&quot;option1&quot;</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it&#39;s great
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h4>Inline checkboxes</h4>
     <p>Use <code>.checkbox-inline</code> or <code>.radio-inline</code> class to a series of checkboxes or radios for controls appear on the same line.</p>
@@ -1333,17 +1451,16 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
       </label>
     </form>
-{% highlight html %}
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-</label>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;checkbox-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;inlineCheckbox1&quot;</span> <span class="na">value=</span><span class="s">&quot;option1&quot;</span><span class="nt">&gt;</span> 1
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;checkbox-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;inlineCheckbox2&quot;</span> <span class="na">value=</span><span class="s">&quot;option2&quot;</span><span class="nt">&gt;</span> 2
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;checkbox-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;inlineCheckbox3&quot;</span> <span class="na">value=</span><span class="s">&quot;option3&quot;</span><span class="nt">&gt;</span> 3
+<span class="nt">&lt;/label&gt;</span>
+</code></pre></div>
 
     <h3>Selects</h3>
     <p>Use the default option or specify a <code>multiple="multiple"</code> to show multiple options at once.</p>
@@ -1364,23 +1481,22 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <option>5</option>
       </select>
     </form>
-{% highlight html %}
-<select>
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;select&gt;</span>
+  <span class="nt">&lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
 
-<select multiple="multiple">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-{% endhighlight %}
+<span class="nt">&lt;select</span> <span class="na">multiple=</span><span class="s">&quot;multiple&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+</code></pre></div>
 
 
 
@@ -1392,18 +1508,16 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <form class="bs-example">
       <input class="focused" id="focusedInput" type="text" value="This is focused...">
     </form>
-{% highlight html %}
-<input id="focusedInput" type="text" value="This is focused...">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;focusedInput&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;This is focused...&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-disabled-inputs">Disabled inputs</h3>
     <p>Add the <code>disabled</code> attribute on an input to prevent user input and trigger a slightly different look.</p>
     <form class="bs-example">
       <input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
     </form>
-{% highlight html %}
-<input id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;disabledInput&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Disabled input here...&quot;</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-disabled-fieldsets">Disabled fieldsets</h3>
     <p>Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within the <code>&lt;fieldset&gt;</code> at once.</p>
@@ -1432,26 +1546,25 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <button type="submit" class="btn btn-primary">Submit</button>
       </fieldset>
     </form>
-{% highlight html %}
-<form class="form-inline">
-  <fieldset disabled>
-    <div>
-      <input type="text" placeholder="Disabled input">
-    </div>
-    <div>
-      <select>
-        <option>Disabled select</option>
-      </select>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Can't check this
-      </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </fieldset>
-</form>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Disabled input&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;select&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Disabled select<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;</span> Can&#39;t check this
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-validation">Validation states</h3>
     <p>Bootstrap includes validation styles for error, warning, info, and success messages. To use:</p>
@@ -1481,26 +1594,25 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </div>
       </div>
     </form>
-{% highlight html %}
-<div class="control-group has-warning">
-  <label class="control-label" for="inputWarning">Input with warning</label>
-  <div class="controls">
-    <input type="text" class="input-with-feedback" id="inputWarning">
-  </div>
-</div>
-<div class="control-group has-error">
-  <label class="control-label" for="inputError">Input with error</label>
-  <div class="controls">
-    <input type="text" class="input-with-feedback" id="inputError">
-  </div>
-</div>
-<div class="control-group has-success">
-  <label class="control-label" for="inputSuccess">Input with success</label>
-  <div class="controls">
-    <input type="text" class="input-with-feedback" id="inputSuccess">
-  </div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;control-group has-warning&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span> <span class="na">for=</span><span class="s">&quot;inputWarning&quot;</span><span class="nt">&gt;</span>Input with warning<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;controls&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;input-with-feedback&quot;</span> <span class="na">id=</span><span class="s">&quot;inputWarning&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;control-group has-error&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span> <span class="na">for=</span><span class="s">&quot;inputError&quot;</span><span class="nt">&gt;</span>Input with error<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;controls&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;input-with-feedback&quot;</span> <span class="na">id=</span><span class="s">&quot;inputError&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;control-group has-success&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;control-label&quot;</span> <span class="na">for=</span><span class="s">&quot;inputSuccess&quot;</span><span class="nt">&gt;</span>Input with success<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;controls&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;input-with-feedback&quot;</span> <span class="na">id=</span><span class="s">&quot;inputSuccess&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
 
 
@@ -1536,23 +1648,22 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <span class="input-group-addon">.00</span>
       </div>
     </form>
-{% highlight html %}
-<div class="input-group col-lg-9">
-  <span class="input-group-addon">@</span>
-  <input type="text" placeholder="Username">
-</div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-9&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-6">
-  <input type="text">
-  <span class="input-group-addon">.00</span>
-</div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-6&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>.00<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-3">
-  <span class="input-group-addon">$</span>
-  <input type="text">
-  <span class="input-group-addon">.00</span>
-</div>
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>$<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>.00<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h4>Optional sizes</h4>
     <p>Add the relative form sizing classes to the <code>.input-group-addon</code>.</p>
@@ -1572,22 +1683,21 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <input type="text" class="input-small" placeholder="Username">
       </div>
     </form>
-{% highlight html %}
-<div class="input-group col-lg-9">
-  <span class="input-group-addon input-large">@</span>
-  <input type="text" class="input-large" placeholder="Username">
-</div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-9&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon input-large&quot;</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;input-large&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-9">
-  <span class="input-group-addon">@</span>
-  <input type="text" placeholder="Username">
-</div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-9&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon&quot;</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-9">
-  <span class="input-group-addon input-small">@</span>
-  <input type="text" class="input-small" placeholder="Username">
-</div>
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-9&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-addon input-small&quot;</span><span class="nt">&gt;</span>@<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Username&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h4>Buttons instead of text</h4>
     <p>Buttons in input groups are a bit different and require one extra level of nesting. Instead of <code>.input-group-addon</code>, you'll need to use <code>.input-group-btn</code> to wrap the buttons. This is required due to default browser styles that cannot be overridden.</p>
@@ -1606,21 +1716,20 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </span>
       </div>
     </form>
-{% highlight html %}
-<div class="input-group col-lg-7">
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Go!</button>
-  </span>
-  <input type="text">
-</div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-7">
-  <input type="text">
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button">Go!</button>
-  </span>
-</div>
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h4>Button dropdowns</h4>
     <p></p>
@@ -1653,35 +1762,34 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </div><!-- /btn-group -->
       </div><!-- /input-group -->
     </form>
-{% highlight html %}
-<div class="input-group col-lg-7">
-  <div class="input-group-btn">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
-  </div><!-- /btn-group -->
-  <input type="text">
-</div><!-- /input-group -->
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /btn-group --&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
 
-<div class="input-group col-lg-7">
-  <input type="text">
-  <div class="input-group-btn">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Action</a></li>
-      <li><a href="#">Another action</a></li>
-      <li><a href="#">Something else here</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
-  </div><!-- /btn-group -->
-</div><!-- /input-group -->
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default dropdown-toggle&quot;</span> <span class="na">data-toggle=</span><span class="s">&quot;dropdown&quot;</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;caret&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;dropdown-menu&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;divider&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /btn-group --&gt;</span>
+<span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
+</code></pre></div>
 
     <h4>Segmented dropdown groups</h4>
     <form class="bs-example bs-example-form">
@@ -1721,21 +1829,20 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </div>
       </div>
     </form>
-{% highlight html %}
-<div class="input-group col-lg-7">
-  <div class="input-group-btn">
-    <!-- Button and dropdown menu -->
-  </div>
-  <input type="text">
-</div>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group-btn&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Button and dropdown menu --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<div class="input-group col-lg-7">
-  <input type="text">
-  <div class="input-group-btn btn-group">
-    <!-- Button and dropdown menu -->
-  </div>
-</div>
-{% endhighlight %}
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group col-lg-7&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;input-group-btn btn-group&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Button and dropdown menu --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-control-sizes">Control sizing</h3>
     <p>Use relative sizing classes like <code>.input-large</code> or match your inputs to the grid column sizes using <code>.col-lg-*</code> classes.</p>
@@ -1749,11 +1856,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <input class="input-small" type="text" placeholder=".input-small">
       </div>
     </form>
-{% highlight html %}
-<input class="input-large" type="text" placeholder=".input-large">
-<input type="text" placeholder="Default input">
-<input class="input-small" type="text" placeholder=".input-small">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-large&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;.input-large&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Default input&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-small&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;.input-small&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <h4>Column sizing</h4>
     <p>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</p>
@@ -1770,19 +1876,18 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         </div>
       </div>
     </form>
-{% highlight html %}
-<div class="row">
-  <div class="col-lg-2">
-    <input type="text" placeholder=".col-lg-2">
-  </div>
-  <div class="col-lg-3">
-    <input type="text" placeholder=".col-lg-3">
-  </div>
-  <div class="col-lg-4">
-    <input type="text" placeholder=".col-lg-4">
-  </div>
-</div>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-2&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;.col-lg-2&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;.col-lg-3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-4&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;.col-lg-4&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
 
     <h3 id="forms-help-text">Help text</h3>
     <p>Block level help text for form controls.</p>
@@ -1790,9 +1895,8 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <input type="text">
       <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
     </form>
-{% highlight html %}
-<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;help-block&quot;</span><span class="nt">&gt;</span>A longer block of help text that breaks onto a new line and may extend beyond one line.<span class="nt">&lt;/span&gt;</span>
+</code></pre></div>
 
   </div>
 
@@ -1816,28 +1920,27 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <button type="button" class="btn btn-danger">Danger</button>
       <button type="button" class="btn btn-link">Link</button>
     </div>
-{% highlight html %}
-<!-- Standard gray button with gradient -->
-<button type="button" class="btn btn-default">Default</button>
+<div class="highlight"><pre><code class="html"><span class="c">&lt;!-- Standard gray button with gradient --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/button&gt;</span>
 
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
+<span class="c">&lt;!-- Provides extra visual weight and identifies the primary action in a set of buttons --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
 
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
+<span class="c">&lt;!-- Indicates a successful or positive action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-success&quot;</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
 
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
+<span class="c">&lt;!-- Contextual button for informational alert messages --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-info&quot;</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
 
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
+<span class="c">&lt;!-- Indicates caution should be taken with this action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-warning&quot;</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
 
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
+<span class="c">&lt;!-- Indicates a dangerous or potentially negative action --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-danger&quot;</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
 
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
-{% endhighlight %}
+<span class="c">&lt;!-- Deemphasize a button by making it look like a link while maintaining button behavior --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-link&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
 
     <h2 id="buttons-sizes">Button sizes</h2>
     <p>Fancy larger or smaller buttons? Add <code>.btn-large</code> or <code>.btn-small</code> for additional sizes.</p>
@@ -1855,20 +1958,19 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <button type="button" class="btn btn-default btn-small">Small button</button>
       </p>
     </div>
-{% highlight html %}
-<p>
-  <button type="button" class="btn btn-primary btn-large">Large button</button>
-  <button type="button" class="btn btn-default btn-large">Large button</button>
-</p>
-<p>
-  <button type="button" class="btn btn-primary">Default button</button>
-  <button type="button" class="btn btn-default">Default button</button>
-</p>
-<p>
-  <button type="button" class="btn btn-primary btn-small">Small button</button>
-  <button type="button" class="btn btn-default btn-small">Small button</button>
-</p>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-large&quot;</span><span class="nt">&gt;</span>Large button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-large&quot;</span><span class="nt">&gt;</span>Large button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="nt">&gt;</span>Default button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span><span class="nt">&gt;</span>Default button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-small&quot;</span><span class="nt">&gt;</span>Small button<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-small&quot;</span><span class="nt">&gt;</span>Small button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
 
     <p>Create block level buttons&mdash;those that span the full width of a parent&mdash; by adding <code>.btn-block</code>.</p>
     <div class="bs-example">
@@ -1877,10 +1979,9 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
         <button type="button" class="btn btn-default btn-large btn-block">Block level button</button>
       </div>
     </div>
-{% highlight html %}
-<button type="button" class="btn btn-primary btn-large btn-block">Block level button</button>
-<button type="button" class="btn btn-default btn-large btn-block">Block level button</button>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-large btn-block&quot;</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-large btn-block&quot;</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
 
 
     <h2 id="buttons-disabled">Disabled state</h2>
@@ -1892,10 +1993,9 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <button type="button" class="btn btn-primary btn-large" disabled="disabled">Primary button</button>
       <button type="button" class="btn btn-default btn-large" disabled="disabled">Button</button>
     </p>
-{% highlight html %}
-<button type="button" class="btn btn-large btn-primary" disabled="disabled">Primary button</button>
-<button type="button" class="btn btn-default btn-large" disabled="disabled">Button</button>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-large btn-primary&quot;</span> <span class="na">disabled=</span><span class="s">&quot;disabled&quot;</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-large&quot;</span> <span class="na">disabled=</span><span class="s">&quot;disabled&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
 
     <div class="bs-callout">
       <h4>Cross-browser compatibility</h4>
@@ -1908,10 +2008,9 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <a href="#" class="btn btn-primary btn-large disabled">Primary link</a>
       <a href="#" class="btn btn-default btn-large disabled">Link</a>
     </p>
-{% highlight html %}
-<a href="#" class="btn btn-primary btn-large disabled">Primary link</a>
-<a href="#" class="btn btn-default btn-large disabled">Link</a>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary btn-large disabled&quot;</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-default btn-large disabled&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
     <p>
       We use <code>.disabled</code> as a utility class here, similar to the common <code>.active</code> class, so no prefix is required.
     </p>
@@ -1929,12 +2028,11 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <input class="btn btn-default" type="button" value="Input">
       <input class="btn btn-default" type="submit" value="Submit">
     </form>
-{% highlight html %}
-<a class="btn btn-default" href="#">Link</a>
-<button class="btn btn-default" type="submit">Button</button>
-<input class="btn btn-default" type="button" value="Input">
-<input class="btn btn-default" type="submit" value="Submit">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">value=</span><span class="s">&quot;Input&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
     <div class="bs-callout">
       <h4>Cross-browser rendering</h4>
@@ -1962,11 +2060,10 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
       <img data-src="holder.js/140x140" class="img-circle">
       <img data-src="holder.js/140x140" class="img-thumbnail">
     </div>
-{% highlight html %}
-<img src="..." class="img-rounded">
-<img src="..." class="img-circle">
-<img src="..." class="img-thumbnail">
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">class=</span><span class="s">&quot;img-rounded&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">class=</span><span class="s">&quot;img-circle&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;...&quot;</span> <span class="na">class=</span><span class="s">&quot;img-thumbnail&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
 
   </div>
 
@@ -1983,55 +2080,48 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <div class="bs-example">
       <p><button type="button" class="close">&times;</button></p>
     </div>
-{% highlight html %}
-<button type="button" class="close">&times;</button>
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
 
     <h3>.pull-left</h3>
     <p>Float an element left</p>
-{% highlight html %}
-<div class="pull-left">...</div>
-{% endhighlight %}
-{% highlight css %}
-.pull-left {
-  float: left;
-}
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pull-left&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="nc">.pull-left</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
     <h3>.pull-right</h3>
     <p>Float an element right</p>
-{% highlight html %}
-<div class="pull-right">...</div>
-{% endhighlight %}
-{% highlight css %}
-.pull-right {
-  float: right;
-}
-{% endhighlight %}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pull-right&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="nc">.pull-right</span> <span class="p">{</span>
+  <span class="k">float</span><span class="o">:</span> <span class="k">right</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
     <h3>.clearfix</h3>
     <p>Clear the <code>float</code> on any element. Utilizes <a href="http://nicolasgallagher.com/micro-clearfix-hack/">the micro clearfix</a> as popularized by Nicolas Gallagher.</p>
-{% highlight html %}
-<div class="clearfix">...</div>
-{% endhighlight %}
-{% highlight css %}
-// Mixin
-.clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;clearfix&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><code class="css"><span class="o">//</span> <span class="nt">Mixin</span>
+<span class="nc">.clearfix</span> <span class="p">{</span>
+  <span class="o">&amp;:</span><span class="n">before</span><span class="o">,</span>
+  <span class="o">&amp;:</span><span class="n">after</span> <span class="err">{</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="n">table</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="o">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
 
-// Usage
-.element {
-  .clearfix();
-}
-{% endhighlight %}
+<span class="o">//</span> <span class="nt">Usage</span>
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">clearfix</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
   </div>
 
   <!-- Responsive utilities
@@ -2156,3 +2246,64 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </ul>
 
   </div>
+
+        </div>
+      </div>
+
+      <!-- Quick back to top -->
+      <a href="#" class="bs-top">
+        Back to top
+      </a>
+
+    </div>
+
+    <!-- Main docs footer (social buttons, copyright, etc). -->
+    <!-- Footer
+================================================== -->
+<footer class="bs-footer">
+  <div class="bs-social">
+  <ul class="bs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+    </li>
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+    </li>
+  </ul>
+</div>
+
+
+  <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+  <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+  <ul class="footer-links">
+    <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+    <li class="muted">&middot;</li>
+    <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+    <li class="muted">&middot;</li>
+    <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
+  </ul>
+</footer>
+
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script src="/assets/js/holder/holder.js"></script>
+
+<script src="/assets/js/application.js"></script>
+
+
+
+  </body>
+</html>
